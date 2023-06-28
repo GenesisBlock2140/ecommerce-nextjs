@@ -5,7 +5,7 @@ import { FC } from 'react'
 
 interface IProductCard {
   title: string
-  productId: number
+  productId: string
   price: number
   picture: any
 }
@@ -17,9 +17,9 @@ export const ProductCard: FC<IProductCard> = ({ title, productId, price, picture
         <div className='w-full overflow-hidden'>
           <Image src={picture} alt={picture} width={350} height={350} className='duration-300 hover:scale-110' />
         </div>
-        <div className='flex justify-between items-center mt-2'>
+        <div className='flex justify-between items-center gap-2 mt-2'>
           <p>{title}</p>
-          <p>{`${price}${currency.symbol}`}</p>
+          <p className='font-medium'>{`${price}${currency.symbol}`}</p>
         </div>
       </Link>
     </div>

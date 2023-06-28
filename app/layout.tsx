@@ -1,7 +1,9 @@
+import { Footer } from '@/components/footer'
 import './globals.css'
 import { Poppins } from 'next/font/google'
+import { Navbar } from '@/components/navbar'
 
-const poppins = Poppins({weight: ['400', '700'], subsets: ['latin']})
+const poppins = Poppins({weight: ['400', '500', '600', '700', '800'], subsets: ['latin']})
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
