@@ -6,3 +6,28 @@
   margin: 0;
   padding: 0;
 }
+
+.slide-left-cart {
+  animation: slide-left-cart 0.8s 1 forwards;
+  animation-iteration-count: 1;
+}
+
+.slide-right-cart {
+  animation: slide-right-cart 0.8s 1 forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes slide-left-cart {
+  100% {
+    transform: translateX(-350px);
+  }
+}
+
+@keyframes slide-right-cart {
+  0% {
+    transform: translateX(-350px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
