@@ -9,9 +9,9 @@ interface ILoginModal {
 export const LoginModal: FC<ILoginModal> = ({ setIsLoginModalOpen }) => {
   return (
     <>
-      <div className="w-full h-full bg-[#00000095] fixed top-0 left-0" onClick={() => setIsLoginModalOpen(old => !old)}>
+      <div className="w-full h-full bg-[#00000095] fixed top-0 left-0 z-20" onClick={() => setIsLoginModalOpen(old => !old)}>
       </div>
-      <div className="w-full h-full fixed top-0 left-0 flex justify-center items-center">
+      <div className="w-full h-full fixed top-0 left-0 flex justify-center items-center z-30">
         <div className="w-[350px] lg:w-[450px] h-80 bg-white rounded px-4">
           <div className="flex justify-between items-center p-3">
             <p className="text-xl font-medium">Se connecter</p>

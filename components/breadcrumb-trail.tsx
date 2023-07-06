@@ -1,3 +1,5 @@
+import { removeAccents } from "@/utils/removeAccents";
+import { productUrlFormat } from "@/utils/urlFormat";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -18,7 +20,7 @@ export const BreadcrumbTrail: FC<IBreadcrumbTrail> = ({ fil }) => {
       {fil.map((item, index) => {
         return (
         <>
-          <Link href={item.link}>{item.name}</Link>
+          <Link className="capitalize" href={productUrlFormat(removeAccents(item.link))}>{item.name}</Link>
           {(index+1) !== fil.length && <span> {">"} </span>}
         </>
         )

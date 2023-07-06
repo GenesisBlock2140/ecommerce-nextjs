@@ -8,12 +8,12 @@
 }
 
 .slide-left-cart {
-  animation: slide-left-cart 0.8s 1 forwards;
+  animation: slide-left-cart 0.5s 1 forwards;
   animation-iteration-count: 1;
 }
 
 .slide-right-cart {
-  animation: slide-right-cart 0.8s 1 forwards;
+  animation: slide-right-cart 0.5s 1 forwards;
   animation-iteration-count: 1;
 }
 
