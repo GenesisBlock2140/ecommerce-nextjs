@@ -7,12 +7,13 @@ interface IBanner {
   description: string
   goTo: string
   img: string
+  reverse?: boolean
 }
 
-export const Banner:FC<IBanner> = ({ title, description, goTo, img }) => {
+export const Banner:FC<IBanner> = ({ title, description, goTo, img, reverse = false }) => {
   return (
-    <div className='w-full h-[400px] bg-[#f2f2f2] flex my-10'>
-      <div className=' w-full lg:w-1/2 flex justify-center items-center px-2'>
+    <div className={`w-full h-[400px] bg-[#f2f2f2] flex ${reverse ? 'flex-row-reverse' : ''} my-10`}>
+      <div className='w-full lg:w-1/2 flex justify-center items-center px-2'>
         <div className='max-w-[400px]'>
           <p className='text-3xl font-semibold uppercase'>{title}</p>
           <p className='text-lg my-3'>{description}</p>
