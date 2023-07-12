@@ -1,5 +1,10 @@
+"use client"
+
 import { FC } from "react";
 import Image from "next/image";
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '@/redux/store'
+import { removeFromCart } from '@/redux/features/cart-slice'
 
 interface ICartItems {
   quantity: number
@@ -9,6 +14,13 @@ interface ICartItems {
 }
 
 export const CartItems: FC<ICartItems> = ({ quantity, name, unitPrice, img }) => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const deleteItem = () => {
+    dispatch(removeFromCart({ productName: name }))
+  }
+
   return (
     <div className="flex my-2">
     <div className="block w-20">
@@ -18,7 +30,7 @@ export const CartItems: FC<ICartItems> = ({ quantity, name, unitPrice, img }) =>
       <p className="text-sm">{`${quantity}x ${name}`}</p>
       <div className="flex justify-around mt-2">
         <p className="font-semibold">{`${unitPrice * quantity} €`}</p>
-        <button className="text-xs text-gray-600">Supprimer</button>
+        <button className="text-xs text-gray-600" onClick={deleteItem}>Supprimer</button>
       </div>
     </div>
   </div>
