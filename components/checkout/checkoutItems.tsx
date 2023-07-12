@@ -1,6 +1,10 @@
 "use client"
+
 import { FC } from 'react'
 import Image from "next/image"
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '@/redux/store'
+import { removeFromCart } from '@/redux/features/cart-slice'
 
 interface IcheckoutItems {
   name: string
@@ -10,6 +14,13 @@ interface IcheckoutItems {
 }
 
 export const CheckoutItems: FC<IcheckoutItems> = ({ name, price, quantity, image }) => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const deleteItem = () => {
+    dispatch(removeFromCart({ productName: name }))
+  }
+
   return (
       <div className="my-4">
         <div className='flex justify-between items-center'>
@@ -24,7 +35,14 @@ export const CheckoutItems: FC<IcheckoutItems> = ({ name, price, quantity, image
           </div>
           <div className='flex gap-1 mr-2'>
             <p className='bg-gray-100 px-4 rounded'>{quantity}</p>
-            <Image src={'/svg/trash.svg'} alt='delete' width={20} height={20} className='cursor-pointer' />
+            <Image 
+              src={'/svg/trash.svg'} 
+              alt='delete' 
+              width={20} 
+              height={20} 
+              className='cursor-pointer'
+              onClick={deleteItem} 
+            />
           </div>
         </div>
     </div>

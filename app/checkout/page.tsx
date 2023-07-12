@@ -1,37 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { CheckoutItems } from "@/components/checkout/checkoutItems";
 import { Shell } from "@/components/shell";
-import { CheckoutEmpty } from "@/components/checkout/checkout-empty";
+import { CheckoutBox } from "@/components/checkout/checkoutBox";
+import { CheckoutTotal } from "@/components/checkout/checkout-total";
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: "Brocante - Finaliser vos achats",
+  description: "Brocante est un site de brocante en ligne vous proposant une multitude d'objets uniques et vintages.",
+  icons: {
+    icon: "favicon.ico"
+  }
+}
 
 export default function Checkout() {
+
   return (
     <Shell className="px-2">
-      <h1 className="text-xl lg:text-2xl font-semibold my-10">Votre panier (2)</h1>
-      <CheckoutEmpty />
-      <div className="lg:flex justify-between gap-10">
-        <div className="w-full max-w-[750px] text-sm lg:text-base">
-          <CheckoutItems name="Lampe flexible réflecteur aluminium" price={119.99} quantity={1} image={'/product/lampe/lampe-luminorex.png'} />
-          <CheckoutItems name="Lampe de bureau vintage Luminorex bordeaux" price={149} quantity={1} image={'/product/lampe/lampe-luminorex.png'} />
-        </div>
-        <div className="w-full sm:w-[350px] h-[250px] px-4 py-8 mx-auto bg-gray-100 rounded">
-          <p className="text-xl font-semibold mb-4">Total du panier</p>
-          <div className="flex justify-between my-2">
-            <p>Sous total</p>
-            <p className="font-semibold">145 €</p>
-          </div>
-          <div className="flex justify-between my-2">
-            <p>Frais de livraison</p>
-            <p className="font-semibold">4.99 €</p>
-          </div>
-          <hr />
-          <div className="flex justify-between my-2">
-            <p>Total</p>
-            <p className="font-semibold">149.99 €</p>
-          </div>
-          <Button text="Paiement 🛒" size="big" to="/checkout" />
-        </div>
+      <h1 className="text-xl lg:text-2xl font-semibold my-10">Votre panier</h1>
+      <div className="flex flex-col lg:flex-row justify-between gap-10">
+        <CheckoutBox />
+        <CheckoutTotal />
       </div>
-      
+      <div className="lg:mb-[250px]"/>
     </Shell>
   )
 }
