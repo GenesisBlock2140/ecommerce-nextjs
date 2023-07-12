@@ -25,7 +25,7 @@ export const Footer: FC = () => {
       </div>
       <p className="text-center text-sm">
         © 2023 Brocbroc, open source
-        <a href=""> github</a>  
+        <a href="https://github.com/GenesisBlock2140/ecommerce-nextjs" target="_blank"> github</a>  
       </p>
     </div>
   )
