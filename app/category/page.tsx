@@ -7,7 +7,7 @@ export default function Category () {
       <h1 className="text-2xl text-center font-medium my-20">Parcourir nos catégories</h1>
       <Banner 
           title='Nos lampes' 
-          description='Découvrez nos collections de magnifique lampes blabla tu sais quoi'
+          description='Découvrez nos collections de magnifique lampes vintages pour tous'
           goTo='/category/lampes'
           img='/category/lampe-sable.png'
         />

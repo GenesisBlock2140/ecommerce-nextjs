@@ -1,0 +1,62 @@
+{
+  "lampes": [
+    {
+      "name": "Lampe flexible réflecteur aluminium",
+      "price": 79,
+      "picture": "/product/lampe/lampe-alu.png",
+      "rating": 4.5,
+      "description": "Belle petite lampe flexible, sont pieds est en fonte et recouvert par une coupelle en aluminium, le réflecteur est en aluminium et est orientable par une petite molette, le diamètre du réflecteur est de 14 cm. Quelques traces d'usure et du temps perceptibles. L'électricité à été refaite et fonctionne parfaitement, la douille est à baïonnette b22.",
+      "category": "lampes"
+    },
+    {
+      "name": "Lampe de bureau vintage modèle rare",
+      "price": 150,
+      "picture": "/product/lampe/lampe-bureau-vintage.png",
+      "rating": 4.5,
+      "description": "Belle petite lampe rare, monté sur 2 rotule elle prend des positions diverses, le bras est en laiton, la base en fonte et aluminium pour la coque rouge, quelques traces du temps sont présentes ici et là, le globe est en verre blanc, l'interrupteur est neuf et son électricité vérifié, la douille est une baïonnette b22, l'ampoule est fournie avec. Sur un bureau ou sur votre de nuit pour une décoration vintage année 60.",
+      "category": "lampes"
+    },
+    {
+      "name": "Lampe de bureau vintage Luminorex bordeaux",
+      "price": 65,
+      "picture": "/product/lampe/lampe-luminorex.png",
+      "rating": 3.9,
+      "description": "Lampe vintage luminorex, de couleur bordeaux, le bras en métal chromé est terminé sur les deux extrémités par une rotule qui lui permet de se positionner dans tous les sens. Quelques traces du temps, une belle patine de l'ensemble, lampe peu commune. Douille b2 (baïonnette).",
+      "category": "lampes"
+    },
+    {
+      "name": "Lampe Elaul industrielle",
+      "price": 240,
+      "picture": "/product/lampe/lampe-indus.png",
+      "rating": 5,
+      "description": "Lampe elaul industrielle, elle est monté sur une base étau qui lui permettra d'être fixé sur un plan ou rebord de bureau, est est d'un pur jus industriel, modèle peu courant et à été fabriqué durant les années 50, sa plaque fabricant est encore présente, elle pivote dans plusieurs sens, son réflecteur est en aluminium, il y a quelques traces du temps qui lui donne un vrai charme, idéal pour une déco industrielle originale, ca change des jielde que tout le monde possède.",
+      "category": "lampes"
+    },
+    {
+      "name": "Lampe art déco en laiton doré",
+      "price": 130,
+      "picture": "/product/lampe/lampe-art-deco.png",
+      "rating": 4,
+      "description": "Belle lampe art déco, pied en laiton doré présentant une belle patine du temps, la douille est en b22 (baïonnette), elle est coiffée d'un abat jour récent lui donnant une belle couleur lorsqu'elle est allumée. Hauteur de la colonne seule 35 cm la base fait 11 X 11 cm, elle mesure 50 cm avec l'abat jour, celui ci fait 27 cm de large. Elle fonctionne parfaitement.",
+      "category": "lampes"
+    },
+    {
+      "name": "Lampe de bureau vintage modèle rare",
+      "price": 150,
+      "picture": "/product/lampe/lampe-bureau-vintage.png",
+      "rating": 4.5,
+      "description": "Belle petite lampe rare, monté sur 2 rotule elle prend des positions diverses, le bras est en laiton, la base en fonte et aluminium pour la coque rouge, quelques traces du temps sont présentes ici et là, le globe est en verre blanc, l'interrupteur est neuf et son électricité vérifié, la douille est une baïonnette b22, l'ampoule est fournie avec. Sur un bureau ou sur votre de nuit pour une décoration vintage année 60.",
+      "category": "lampes"
+    }
+  ],
+  "chaise": [
+    {
+      "name": "chaise de bureau",
+      "price": 150,
+      "picture": "/product/lampe/lampe-bureau-vintage.png",
+      "rating": 4.5,
+      "description": "Belle petite lampe rare, monté sur 2 rotule elle prend des positions diverses, le bras est en laiton, la base en fonte et aluminium pour la coque rouge, quelques traces du temps sont présentes ici et là, le globe est en verre blanc, l'interrupteur est neuf et son électricité vérifié, la douille est une baïonnette b22, l'ampoule est fournie avec. Sur un bureau ou sur votre de nuit pour une décoration vintage année 60.",
+      "category": "lampes"
+    }
+  ]
+}

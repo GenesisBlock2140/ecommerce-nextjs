@@ -1,30 +1,32 @@
 import Image from "next/image"
-import star from '@/public/svg/star.svg'
-import starHalf from '@/public/svg/star-half.svg'
 import { Rating } from "@/components/reviews/rating"
-import { Review } from "@/components/reviews/review"
-import chairImg from '@/public/product/chair/marron-chair.jpg'
 import { ReviewList } from "@/components/reviews/reviewList"
-import { QuantitySelector } from "@/components/product/quantitySelector"
-import { Button } from "@/components/ui/button"
 import { AddToCart } from "@/components/addToCart"
 import { Shell } from "@/components/shell"
 import { BreadcrumbTrail } from "@/components/breadcrumb-trail"
-import lampList from '@/data/lampes.json'
-import { productUrlFormat } from "@/utils/urlFormat"
-import { removeAccents } from "@/utils/removeAccents"
 import { notFound } from 'next/navigation'
+import { AddToWishlist } from "@/components/addToWishlist"
+import { getProductByName } from "@/services/product/getProductByName"
+import { Metadata, ResolvingMetadata } from "next"
+
+export async function generateMetadata(
+  { params }: { params: { productName: string } },
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  const product = getProductByName(params.productName)
+  if (product.length === 0) {
+    return {
+      title: "Ce produit n'existe pas | Brocante"
+    }
+  }
+  return {
+    title: `${product[0].name} | Brocante`,
+  }
+}
 
 export default function Product({ params }: { params: { productName: string } }) {
 
-  console.log(removeAccents("lampe-de-bureau-vintage-modèle-rare") === params.productName);
-  console.log(removeAccents("lampe-de-bureau-vintage-modèle-rare"))
-  console.log(params.productName)
-
-  const getProductData = lampList.lampes.filter(item => 
-    productUrlFormat(removeAccents(item.name)) === params.productName)
-
-  console.log(getProductData)
+  const getProductData = getProductByName(params.productName)
 
   if (getProductData.length === 0) {
     notFound()
@@ -32,18 +34,23 @@ export default function Product({ params }: { params: { productName: string } })
 
   return (
     <Shell className="px-2">
-      <BreadcrumbTrail fil={[{link: '/category/lampes', name: 'Lampes'}, {link: '/product/1', name: 'Produit'}]} />
+      <BreadcrumbTrail 
+        fil={[
+          {link: `/category/${getProductData[0].category}`, name: getProductData[0].category}, 
+          {link: `/product/${getProductData[0].name}`, name: 'Produit'}
+        ]}
+      />
       <div className="flex flex-wrap justify-start gap-10">
-        <div className="max-w-[550px]">
-          <Image src={getProductData[0].picture} alt="chairImg" width={550} height={550} />
+        <div className="max-w-[550px] relative z-10">
+          <AddToWishlist />
+          <Image src={getProductData[0].picture} alt={getProductData[0].name} width={550} height={550} />
         </div>
         <div className="max-w-[550px]">
-          <p>{}</p>
           <p className="text-3xl font-medium my-2">{getProductData[0].name}</p>
           <Rating rating={getProductData[0].rating} />
           <p className="text-3xl my-4">{getProductData[0].price} €</p>
           <p>{getProductData[0].description}</p>
-          <AddToCart productId="22" />
+          <AddToCart productData={getProductData[0]} />
         </div>
       </div>
       <div className="my-20">
