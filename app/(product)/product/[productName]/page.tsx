@@ -7,11 +7,10 @@ import { BreadcrumbTrail } from "@/components/breadcrumb-trail"
 import { notFound } from 'next/navigation'
 import { AddToWishlist } from "@/components/addToWishlist"
 import { getProductByName } from "@/services/product/getProductByName"
-import { Metadata, ResolvingMetadata } from "next"
+import { Metadata } from "next"
 
 export async function generateMetadata(
-  { params }: { params: { productName: string } },
-  parent?: ResolvingMetadata
+  { params }: { params: { productName: string } }
 ): Promise<Metadata> {
   const product = getProductByName(params.productName)
   if (product.length === 0) {

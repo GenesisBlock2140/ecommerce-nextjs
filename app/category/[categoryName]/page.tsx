@@ -3,11 +3,10 @@ import { notFound } from "next/navigation"
 import productData from '@/data/product.json'
 import { Billboard } from "@/components/category/billboard"
 import { CategoryList } from "@/components/category/categoryList"
-import { ResolvingMetadata, Metadata } from "next"
+import { Metadata } from "next"
 
 export async function generateMetadata(
-  { params }: { params: { categoryName: string } },
-  parent?: ResolvingMetadata
+  { params }: { params: { categoryName: string } }
 ): Promise<Metadata> {
   if (!(params.categoryName in productData)) {
     return {
